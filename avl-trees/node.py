@@ -8,6 +8,7 @@ class Node:
     def __str__(self) -> str:
         return (
             "Node(key=" + str(self.key) + ", "
+            "height=" + str(self.height) + ", "
             "left=" + ("None" if not self.left else str(self.left.key)) + ", "
             "right=" + ("None" if not self.right else str(self.right.key)) + ")"
         )
