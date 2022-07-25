@@ -23,7 +23,7 @@ WELCOME_MESSAGE = """Seja bem vindo a CLI da AVL Tree."""
 
 class CLI:
     def __init__(self) -> None:
-        self.avlTree = avl_tree.AVLTree()
+        self.avl_tree = avl_tree.AVLTree()
         self.actions = {
             "insert": self.insert_into_avl_tree,
             "remove": self.remove_from_avl_tree,
@@ -78,18 +78,18 @@ class CLI:
         return tuple([action, argument])
 
     def insert_into_avl_tree(self, key: int) -> None:
-        self.avlTree.insert_node(int(key))
-        self.avlTree.print()
+        self.avl_tree.insert_node(int(key))
+        self.avl_tree.print()
 
     def remove_from_avl_tree(self, key: int) -> None:
-        self.avlTree.remove_node(int(key))
-        self.avlTree.print()
+        self.avl_tree.remove_node(int(key))
+        self.avl_tree.print()
 
     def print_avl_tree(self, key: None) -> None:
-        self.avlTree.print()
+        self.avl_tree.print()
 
     def search_in_avl_tree(self, key: int) -> None:
-        node = self.avlTree.search_node(int(key))
+        node = self.avl_tree.search_node(int(key))
         if not node:
             print("Chave não encontrada na AVL Tree")
         else:
@@ -108,8 +108,8 @@ class CLI:
         print(COMMANDS)
 
     def reset_avl_tree(self, *args) -> None:
-        self.avlTree.reset()
-        self.avlTree.print()
+        self.avl_tree.reset()
+        self.avl_tree.print()
 
     def print_avl_tree_in_order(self, *args) -> None:
-        self.avlTree.print_in_order()
+        self.avl_tree.print_in_order()

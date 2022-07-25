@@ -190,26 +190,26 @@ class AVLTree:
         node.right = self.__perform_simple_right_rotation(node.right)
         return self.__perform_simple_left_rotation(node)
 
-    def __print(self, currentNode: Node, isRightNode: bool, indent: str) -> None:
-        if currentNode.right is not None:
+    def __print(self, current_node: Node, is_right_node: bool, indent: str) -> None:
+        if current_node.right is not None:
             self.__print(
-                currentNode.right,
+                current_node.right,
                 True,
-                indent + (" " * 12 if isRightNode else (" |" + " " * 10)),
+                indent + (" " * 12 if is_right_node else (" |" + " " * 10)),
             )
         print(indent, end="")
-        if isRightNode:
+        if is_right_node:
             print(" /", end="")
         else:
             print(" \\", end="")
 
         print("---- ", end="")
-        print(f"{currentNode.key} (H={currentNode.height})")
-        if currentNode.left is not None:
+        print(f"{current_node.key} (H={current_node.height})")
+        if current_node.left is not None:
             self.__print(
-                currentNode.left,
+                current_node.left,
                 False,
-                indent + (" " * 12 if not isRightNode else (" |" + " " * 10)),
+                indent + (" " * 12 if not is_right_node else (" |" + " " * 10)),
             )
 
     def __print_in_order(self, current_node: Node) -> None:
